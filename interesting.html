@@ -1,119 +1,159 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Цікаве</title>
+<meta charset="UTF-8">
+<title>Цікаве</title>
 
-  <style>
+<style>
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f9f9f9;
+}
+
+h1{
+    text-align:center;
+    color:#0066cc;
+    margin-top:30px;
+}
+
+/* СПИСОК СТАТЕЙ */
+.articles{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+
+    max-width:1000px;
+    margin:auto;
+    padding:40px;
+}
+
+/* СТАТТЯ */
+.article{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    background:white;
+    padding:20px;
+
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ЛОГО */
+.logo{
+    flex:0 0 120px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-right:20px;
+
+    order:1;
+}
+
+.logo img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* ТЕКСТ */
+.text{
+    flex:1;
+    order:2;
+}
+
+.text h3{
+    margin-top:0;
+    color:#0066cc;
+}
+
+.text p{
+    line-height:1.6;
+    text-align:justify;
+}
+
+/* АДАПТИВНІСТЬ */
+@media screen and (max-width:768px){
+
+    .article{
+        flex-direction:column;
+        text-align:center;
     }
 
-    h1 {
-      text-align: center;
-      color: #0066cc;
-      margin-top: 30px;
+    /* зміна порядку елементів */
+    .logo{
+        order:2;
+        margin-right:0;
+        margin-top:15px;
     }
 
-    /* ====== КОНТЕЙНЕР СТАТЕЙ ====== */
-    .articles {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px;
+    .text{
+        order:1;
     }
 
-    /* ====== ОДНА СТАТТЯ ====== */
-    .article {
-      display: block;
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 30px;
-
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .text p{
+        text-align:left;
     }
+}
 
-    /* ЛОГО + ТЕКСТ В ОДИН РЯД */
-    .logo {
-      display: inline-block;
-      width: 120px;
-      vertical-align: top;
-      text-align: center;
-      margin-right: 20px;
-    }
-
-    .logo img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #0066cc;
-    }
-
-    .text {
-      display: inline-block;
-      width: 750px;
-      vertical-align: top;
-    }
-
-    .text h3 {
-      margin-top: 0;
-      color: #0066cc;
-    }
-
-    .text p {
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <h1>Заголовок сторінки (Цікаве)</h1>
+<h1>Цікаві матеріали</h1>
 
-  <div class="articles">
+<div class="articles">
 
-    <!-- СТАТТЯ 1 -->
     <div class="article">
 
-      <div class="logo">
-        <img src="logo1.png" alt="Логотип кафедри">
-      </div>
+        <div class="logo">
+            <img src="logo1.png" alt="Логотип кафедри">
+        </div>
 
-      <div class="text">
-        <h3>Стаття 1</h3>
-        <p>
-          Тут можна розмістити цікаву інформацію, факт або статтю, пов’язану з
-          навчанням, технологіями чи науковими дослідженнями. Наприклад: опис
-          нових досягнень у сфері комп’ютерних наук.
-        </p>
-      </div>
+        <div class="text">
+            <h3>Сучасні інформаційні технології</h3>
+
+            <p>
+                Сфера інформаційних технологій постійно розвивається.
+                Щороку з’являються нові інструменти, мови програмування
+                та технології, які спрощують створення програмного
+                забезпечення. Особливу популярність сьогодні мають
+                веб-розробка, штучний інтелект, хмарні обчислення та
+                кібербезпека.
+            </p>
+        </div>
 
     </div>
 
-    <!-- СТАТТЯ 2 -->
     <div class="article">
 
-      <div class="logo">
-        <img src="logo2.png" alt="Логотип кафедри">
-      </div>
+        <div class="logo">
+            <img src="logo2.png" alt="Логотип кафедри">
+        </div>
 
-      <div class="text">
-        <h3>Стаття 2</h3>
-        <p>
-          У цьому блоці можна подати додаткову інформацію: цікаві факти,
-          новини університету чи корисні матеріали для студентів. Це допоможе
-          зробити сторінку більш інформативною та привабливою.
-        </p>
-      </div>
+        <div class="text">
+            <h3>Навчання та саморозвиток</h3>
+
+            <p>
+                Для майбутнього ІТ-фахівця важливо постійно вдосконалювати
+                свої знання. Окрім навчання в університеті, корисно
+                проходити онлайн-курси, брати участь у проєктах,
+                конференціях та технічних заходах. Це допомагає отримати
+                практичний досвід і краще підготуватися до майбутньої
+                професійної діяльності.
+            </p>
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 </body>
 </html>

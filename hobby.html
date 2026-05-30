@@ -1,110 +1,157 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Хоббі</title>
+<meta charset="UTF-8">
+<title>Хоббі</title>
 
-  <style>
+<style>
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#f9f9f9;
+}
+
+h1{
+    text-align:center;
+    color:#0066cc;
+    margin-top:30px;
+}
+
+/* ОСНОВНИЙ FLEX-КОНТЕЙНЕР */
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items:stretch;
+
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+}
+
+/* FLEX-СІТКА ХОБІ */
+.hobbies{
+    flex:3;
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+
+    order:1;
+}
+
+/* ОДНАКОВА ВИСОТА КАРТОК */
+.hobby{
+    flex:1 1 250px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:220px;
+
+    background:white;
+    padding:20px;
+    border-radius:8px;
+
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.hobby h3{
+    margin-top:0;
+    color:#0066cc;
+}
+
+.hobby p{
+    text-align:center;
+}
+
+/* БОКОВА ПАНЕЛЬ */
+.sidebar{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-left:20px;
+
+    order:2;
+}
+
+.ad{
+    width:100%;
+
+    background:#ffeb99;
+
+    padding:100px;
+
+    text-align:center;
+    border-radius:8px;
+
+    font-weight:bold;
+}
+
+/* АДАПТИВНІСТЬ */
+@media screen and (max-width:768px){
+
+    .container{
+        flex-direction:column;
     }
 
-    h1 {
-      text-align: center;
-      color: #0066cc;
-      margin-top: 30px;
+    /* зміна порядку */
+    .sidebar{
+        order:1;
+        margin-left:0;
+        margin-bottom:20px;
     }
 
-    /* ====== ОСНОВНИЙ КОНТЕЙНЕР ====== */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px;
-      text-align: center;
+    .hobbies{
+        order:2;
     }
 
-    /* ====== БЛОКИ ХОБІ ====== */
-    .hobbies {
-      display: inline-block;
-      width: 850px;
-      vertical-align: top;
-      text-align: left;
+    .hobby{
+        flex:1 1 100%;
     }
+}
 
-    .hobby {
-      display: inline-block;
-      width: 260px;
-      vertical-align: top;
+</style>
 
-      background-color: white;
-      padding: 20px;
-      margin: 10px;
-
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-      box-sizing: border-box;
-    }
-
-    .hobby h3 {
-      margin-top: 0;
-      color: #0066cc;
-    }
-
-    /* ====== SIDEBAR ====== */
-    .sidebar {
-      display: inline-block;
-      width: 250px;
-      vertical-align: top;
-      margin-left: 20px;
-    }
-
-    .ad {
-      background-color: #ffeb99;
-      padding: 20px;
-      text-align: center;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-  </style>
 </head>
 
 <body>
 
-  <h1>Заголовок сторінки (Хоббі)</h1>
+<h1>Мої хоббі</h1>
 
-  <div class="container">
+<div class="container">
 
-    <!-- ХОБІ -->
     <div class="hobbies">
 
-      <div class="hobby">
-        <h3>Хоббі 1</h3>
-        <p>Спорт, музика чи малювання.</p>
-      </div>
+        <div class="hobby">
+            <h3>Програмування</h3>
+            <p>Розробка програм, веб-сайтів та вивчення нових технологій.</p>
+        </div>
 
-      <div class="hobby">
-        <h3>Хоббі 2</h3>
-        <p>Програмування, подорожі чи фотографія.</p>
-      </div>
+        <div class="hobby">
+            <h3>Комп'ютерні ігри</h3>
+            <p>Стратегічні та пригодницькі ігри для розвитку логіки.</p>
+        </div>
 
-      <div class="hobby">
-        <h3>Хоббі 3</h3>
-        <p>Кулінарія, читання чи волонтерство.</p>
-      </div>
+        <div class="hobby">
+            <h3>Подорожі</h3>
+            <p>Відвідування нових місць та знайомство з культурою різних регіонів.</p>
+        </div>
 
     </div>
 
-    <!-- SIDEBAR -->
     <div class="sidebar">
-      <div class="ad">Рекламний блок</div>
+        <div class="ad">
+            Рекламний блок
+        </div>
     </div>
 
-  </div>
+</div>
 
 </body>
 </html>
